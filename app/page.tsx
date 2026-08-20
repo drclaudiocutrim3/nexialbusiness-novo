@@ -18,6 +18,7 @@ import {
   Network,
   Rocket,
   Scale,
+  Search,
   Sparkles,
   Target,
   TrendingUp,
@@ -41,7 +42,7 @@ const courses = [
     featured: true,
     eyebrow: 'Saúde • HealthTech • Biotecnologia',
     description:
-      'Formação interdisciplinar para profissionais que desejam transformar conhecimento em saúde em novos produtos, novos serviços, tecnologias, modelos assistenciais, negócios e novos mercados.',
+      'Programa de criação de novos produtos, serviços, negócios e mercados a partir da medicina e de suas conexões com tecnologia, engenharia, IA, biotecnologia, economia e gestão.',
     connections: [
       'Medicina + Engenharia',
       'Medicina + Inteligência Artificial',
@@ -51,10 +52,11 @@ const courses = [
     ],
     outcomes: [
       'Novos serviços em saúde',
-      'Produtos médicos e dispositivos',
-      'HealthTechs e plataformas digitais',
-      'Novos modelos de atendimento',
+      'Dispositivos e produtos médicos',
+      'HealthTechs e plataformas',
+      'Novos modelos assistenciais',
       'Tecnologias aplicadas à saúde',
+      'Novos modelos de hospitais e clínicas',
       'Novos negócios e mercados em saúde',
     ],
   },
@@ -65,7 +67,7 @@ const courses = [
     icon: Factory,
     eyebrow: 'Deep Tech • Produto • Indústria',
     description:
-      'Transforme capacidade técnica em novos produtos, sistemas, tecnologias, serviços, empresas e novas categorias de mercado por meio de conexões interdisciplinares.',
+      'Programa para transformar conhecimento de engenharia em novos produtos, equipamentos, sistemas, tecnologias, serviços, empresas e mercados.',
     connections: [
       'Engenharia + IA',
       'Engenharia + Medicina',
@@ -75,11 +77,12 @@ const courses = [
     ],
     outcomes: [
       'Novos produtos físicos',
+      'Dispositivos e equipamentos',
       'Sistemas tecnológicos',
       'Automação e novos processos',
       'Deep Tech',
       'Novos serviços tecnológicos',
-      'Novos modelos industriais e mercados',
+      'Novos modelos industriais',
     ],
   },
   {
@@ -89,7 +92,7 @@ const courses = [
     icon: Cpu,
     eyebrow: 'IA • SaaS • Automação',
     description:
-      'Use inteligência artificial, dados e automação como mecanismos de criação de novos produtos, serviços, tecnologias, negócios e mercados em múltiplos setores.',
+      'Programa para utilizar inteligência artificial, dados e automação como mecanismos de criação e transformação de produtos, serviços, empresas e mercados.',
     connections: [
       'IA + Saúde',
       'IA + Engenharia',
@@ -99,10 +102,11 @@ const courses = [
     ],
     outcomes: [
       'SaaS especializados',
-      'Sistemas de decisão',
+      'Sistemas inteligentes',
       'Automação profissional',
       'Produtos baseados em dados',
       'Novos serviços digitais',
+      'Novos modelos de software',
       'Novos mercados digitais',
     ],
   },
@@ -113,7 +117,7 @@ const courses = [
     icon: Scale,
     eyebrow: 'LegalTech • Serviços • Estratégia',
     description:
-      'Recombine Direito, tecnologia, gestão, economia e dados para criar novos produtos, serviços jurídicos, plataformas, tecnologias, negócios e modelos de mercado.',
+      'Programa para recombinar Direito, tecnologia, IA, economia, gestão e dados na criação de novos serviços, plataformas, negócios e mercados.',
     connections: [
       'Direito + Tecnologia',
       'Direito + IA',
@@ -127,7 +131,8 @@ const courses = [
       'Automação de processos',
       'Produtos de informação',
       'Modelos jurídicos escaláveis',
-      'Novos negócios e mercados jurídicos',
+      'Novos negócios jurídicos',
+      'Novos mercados de serviços',
     ],
   },
   {
@@ -137,7 +142,7 @@ const courses = [
     icon: TrendingUp,
     eyebrow: 'Estratégia • Inovação • Negócios',
     description:
-      'Formação interdisciplinar para criação de novos produtos, serviços, receitas, empresas, tecnologias, unidades de negócio e mercados.',
+      'Programa para transformar problemas empresariais e oportunidades de mercado em novos produtos, serviços, receitas, empresas e modelos de negócio.',
     connections: [
       'Gestão + Tecnologia',
       'Gestão + Economia',
@@ -147,11 +152,12 @@ const courses = [
     ],
     outcomes: [
       'Novas unidades de negócio',
-      'Novos serviços',
-      'Novos produtos',
+      'Novos produtos e serviços',
       'Novos modelos de receita',
+      'Transformação empresarial',
       'Reposicionamento de mercado',
-      'Criação de novas categorias',
+      'Novas categorias',
+      'Novos mercados',
     ],
   },
   {
@@ -161,7 +167,7 @@ const courses = [
     icon: Leaf,
     eyebrow: 'AgTech • BioTech • Agroindústria',
     description:
-      'Conecte agronomia, biologia, engenharia, dados, automação e economia para criar novos produtos, serviços, tecnologias, negócios e mercados para o agro.',
+      'Programa para conectar agronomia, biologia, engenharia, automação, dados e economia na criação de produtos, tecnologias, serviços e novos negócios para o agro.',
     connections: [
       'Agronomia + Engenharia',
       'Agronomia + Biotecnologia',
@@ -175,7 +181,8 @@ const courses = [
       'Automação agrícola',
       'Produtos biológicos',
       'Novos serviços para o agro',
-      'Novas cadeias de valor e mercados',
+      'Novas cadeias de valor',
+      'Novos mercados agroindustriais',
     ],
   },
   {
@@ -185,7 +192,7 @@ const courses = [
     icon: Dna,
     eyebrow: 'BioTech • P&D • Produto',
     description:
-      'Transforme ciência e pesquisa em novos produtos, serviços, processos, tecnologias, negócios e aplicações comerciais por meio da interdisciplinaridade.',
+      'Programa para transformar ciência, pesquisa e biotecnologia em produtos, processos, aplicações, tecnologias, empresas e oportunidades comerciais.',
     connections: [
       'Biotecnologia + Medicina',
       'Biotecnologia + Agronomia',
@@ -199,7 +206,8 @@ const courses = [
       'Tecnologias aplicadas',
       'Novos processos',
       'Propriedade intelectual',
-      'Novos negócios e mercados',
+      'Novas aplicações comerciais',
+      'Novos mercados',
     ],
   },
   {
@@ -209,7 +217,7 @@ const courses = [
     icon: BrainCircuit,
     eyebrow: 'Mercados • Estratégia • Decisão',
     description:
-      'Conecte economia, comportamento, dados, tecnologia e gestão para criar novos produtos, serviços, negócios, modelos econômicos e novos mercados.',
+      'Programa para conectar economia, comportamento, tecnologia, dados e gestão na criação de modelos econômicos, negócios e mercados.',
     connections: [
       'Economia + Dados',
       'Economia + Tecnologia',
@@ -219,11 +227,12 @@ const courses = [
     ],
     outcomes: [
       'Novos modelos econômicos',
+      'Novos modelos de monetização',
       'Estratégias de mercado',
       'Produtos de inteligência',
       'Novas estruturas de receita',
-      'Mercados emergentes',
       'Novos modelos empresariais',
+      'Modelagem de novos mercados',
     ],
   },
   {
@@ -233,7 +242,7 @@ const courses = [
     icon: Users,
     eyebrow: 'Sociedade • Inovação • Impacto',
     description:
-      'Formação interdisciplinar para transformar conhecimento sociológico em novos produtos, serviços, tecnologias, negócios e abordagens inovadoras capazes de compreender e enfrentar problemas sociais.',
+      'Programa para transformar a compreensão de fenômenos e problemas sociais em novas abordagens, produtos, serviços, tecnologias, organizações e modelos de intervenção.',
     connections: [
       'Sociologia + Tecnologia',
       'Sociologia + Inteligência Artificial',
@@ -242,11 +251,12 @@ const courses = [
       'Sociologia + Gestão',
     ],
     outcomes: [
-      'Novos produtos de impacto social',
-      'Novos serviços para problemas sociais',
+      'Produtos de impacto social',
+      'Novos serviços sociais',
       'Tecnologias sociais',
-      'Plataformas e soluções digitais',
+      'Plataformas digitais',
       'Novas abordagens de intervenção',
+      'Novas organizações',
       'Novos modelos de negócio e impacto',
     ],
   },
@@ -255,23 +265,33 @@ const courses = [
 const methodology = [
   {
     number: '01',
-    title: 'Desconstruir',
-    text: 'Analisar como um setor funciona hoje e identificar limitações, gargalos, dependências e premissas que podem ser questionadas.',
+    title: 'Observar',
+    text: 'Partir de problemas, necessidades, tendências, mudanças tecnológicas, empresas existentes ou oportunidades ainda pouco exploradas.',
   },
   {
     number: '02',
-    title: 'Conectar',
-    text: 'Buscar conhecimentos, tecnologias e modelos de outras disciplinas capazes de produzir combinações incomuns e economicamente úteis.',
+    title: 'Desconstruir',
+    text: 'Questionar como um produto, serviço, empresa ou mercado funciona hoje e quais premissas parecem imutáveis, mas talvez não sejam.',
   },
   {
     number: '03',
-    title: 'Recombinar',
-    text: 'Criar novas arquiteturas de produto, serviço, tecnologia ou modelo de negócio a partir das conexões identificadas.',
+    title: 'Conectar',
+    text: 'Buscar conhecimentos, tecnologias, modelos econômicos e soluções de outras disciplinas e setores que normalmente permanecem separados.',
   },
   {
     number: '04',
-    title: 'Transformar',
-    text: 'Converter as combinações em propostas concretas de valor, aplicações, produtos, serviços, negócios ou novos mercados.',
+    title: 'Recombinar',
+    text: 'Produzir novas combinações entre problemas, conhecimentos, tecnologias, experiências, modelos de negócio e formas de entrega.',
+  },
+  {
+    number: '05',
+    title: 'Conceber',
+    text: 'Transformar insights em conceitos de produtos, serviços, tecnologias, empresas, modelos econômicos ou novas categorias de mercado.',
+  },
+  {
+    number: '06',
+    title: 'Estruturar',
+    text: 'Organizar a oportunidade em uma proposta mais clara: problema, solução, público, diferenciação, modelo de valor e caminhos possíveis de validação.',
   },
 ];
 
@@ -312,7 +332,7 @@ export default function NexialBusinessPage() {
   const whatsappText = useMemo(
     () =>
       encodeURIComponent(
-        'Olá. Quero conhecer melhor as formações NexialBusiness.'
+        'Olá. Quero conhecer melhor o NexialBusiness e entender qual programa faz mais sentido para mim.'
       ),
     []
   );
@@ -326,6 +346,8 @@ export default function NexialBusinessPage() {
 
   return (
     <main className="min-h-screen bg-[#05090d] text-white selection:bg-emerald-300 selection:text-black">
+
+      {/* NAV */}
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-[#05090d]/85 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
           <a href="#inicio" className="group flex items-center gap-3">
@@ -337,30 +359,28 @@ export default function NexialBusinessPage() {
               <div className="text-base font-bold tracking-tight">
                 Nexial<span className="text-emerald-300">Business</span>
               </div>
-
               <div className="text-[10px] uppercase tracking-[0.18em] text-slate-500">
-                Interdisciplinaridade aplicada
+                Criação de produtos, negócios e mercados
               </div>
             </div>
           </a>
 
-          <nav className="hidden items-center gap-8 text-sm text-slate-400 lg:flex">
+          <nav className="hidden items-center gap-7 text-sm text-slate-400 lg:flex">
             <a href="#conceito" className="transition hover:text-white">
               Conceito
             </a>
-
-            <a href="#formacoes" className="transition hover:text-white">
-              Formações
+            <a href="#transformacao" className="transition hover:text-white">
+              Transformação
             </a>
-
+            <a href="#formacoes" className="transition hover:text-white">
+              Programas
+            </a>
             <a href="#executive" className="transition hover:text-white">
               Executive
             </a>
-
             <a href="#corporate" className="transition hover:text-white">
               Corporate
             </a>
-
             <a href="#metodo" className="transition hover:text-white">
               Método
             </a>
@@ -372,6 +392,7 @@ export default function NexialBusinessPage() {
         </div>
       </header>
 
+      {/* HERO */}
       <section
         id="inicio"
         className="relative overflow-hidden px-5 pb-24 pt-36 lg:px-8 lg:pb-32 lg:pt-44"
@@ -383,22 +404,32 @@ export default function NexialBusinessPage() {
           <div className="max-w-5xl">
             <SectionLabel>NexialBusiness</SectionLabel>
 
+            <div className="mb-6 max-w-4xl text-lg font-medium uppercase tracking-[0.12em] text-slate-400 sm:text-xl">
+              Programa de criação de novos produtos, serviços, negócios e mercados.
+            </div>
+
             <h1 className="max-w-5xl text-5xl font-semibold leading-[0.98] tracking-[-0.055em] text-white sm:text-6xl lg:text-[88px]">
-              Sua profissão resolve problemas.
-              <span className="mt-3 block text-emerald-300">
-                As conexões criam mercados.
+              Crie o que ainda
+              <span className="block text-emerald-300">
+                não existe.
               </span>
             </h1>
 
             <p className="mt-8 max-w-3xl text-lg leading-8 text-slate-400 sm:text-xl">
-              Uma formação criada para transformar conhecimento técnico em
+              Um programa criativo e interdisciplinar para transformar
+              conhecimento, experiência, problemas reais e oportunidades em
+              possibilidades de
               <strong className="font-medium text-white">
-                {' '}
-                novos produtos, novos serviços, novos negócios, novas
-                tecnologias e novos mercados
+                {' '}novos produtos, serviços, tecnologias, empresas,
+                modelos de negócio e novos mercados.
               </strong>
-              , por meio da combinação estruturada de conhecimentos de
-              diferentes áreas.
+            </p>
+
+            <p className="mt-5 max-w-3xl text-base leading-7 text-slate-500 sm:text-lg">
+              Você pode chegar com uma ideia, com uma empresa que precisa ser
+              transformada, com um problema que ainda não encontrou solução —
+              ou simplesmente com a disposição de descobrir oportunidades que
+              talvez ainda não tenha percebido.
             </p>
 
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
@@ -406,81 +437,80 @@ export default function NexialBusinessPage() {
                 href="#formacoes"
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 font-semibold text-black transition hover:bg-slate-200"
               >
-                Conhecer as formações
+                Conhecer os programas
                 <ArrowRight className="h-4 w-4" />
               </a>
 
               <WhatsAppButton>
-                Conversar pelo WhatsApp
+                Conversar sobre minha oportunidade
               </WhatsAppButton>
             </div>
 
             <div className="mt-12 flex flex-wrap gap-x-8 gap-y-4 text-sm text-slate-500">
-              <span className="flex items-center gap-2">
-                <Check className="h-4 w-4 text-emerald-300" />
-                Interdisciplinaridade aplicada
-              </span>
-
-              <span className="flex items-center gap-2">
-                <Check className="h-4 w-4 text-emerald-300" />
-                Criação orientada a oportunidades
-              </span>
-
-              <span className="flex items-center gap-2">
-                <Check className="h-4 w-4 text-emerald-300" />
-                Produto, tecnologia e mercado
-              </span>
+              {[
+                'Novos produtos',
+                'Novos serviços',
+                'Novos negócios',
+                'Novas tecnologias',
+                'Novos mercados',
+              ].map((item) => (
+                <span key={item} className="flex items-center gap-2">
+                  <Check className="h-4 w-4 text-emerald-300" />
+                  {item}
+                </span>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
+      {/* CORE CONCEPT */}
       <section
         id="conceito"
         className="border-y border-white/[0.06] bg-white/[0.015] px-5 py-24 lg:px-8"
       >
         <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
-            <SectionLabel>O princípio Nexial</SectionLabel>
+            <SectionLabel>O que é o NexialBusiness?</SectionLabel>
 
             <h2 className="text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">
-              Não é estudar várias áreas.
-              <span className="mt-2 block text-slate-500">
-                É fazer áreas diferentes produzirem algo novo.
+              Interdisciplinaridade é o método.
+              <span className="mt-2 block text-emerald-300">
+                Criação é o objetivo.
               </span>
             </h2>
           </div>
 
-          <div className="space-y-8 text-lg leading-8 text-slate-400">
+          <div className="space-y-7 text-lg leading-8 text-slate-400">
             <p>
-              O conhecimento tradicional tende a se organizar em disciplinas,
-              profissões, departamentos e setores. Essa especialização é
-              necessária, mas também cria fronteiras.
+              Profissões e mercados normalmente evoluem dentro de suas próprias
+              fronteiras. Médicos estudam saúde. Engenheiros desenvolvem
+              sistemas. Economistas analisam mercados. Empresas observam seus
+              concorrentes.
             </p>
 
             <p>
-              O NexialBusiness trabalha justamente nessas fronteiras. A
-              pergunta deixa de ser apenas
+              O NexialBusiness trabalha justamente na conexão entre essas
+              fronteiras. Conhecimentos, tecnologias e modelos de setores
+              diferentes são aproximados para produzir
               <strong className="font-medium text-white">
-                {' '}
-                “como fazer melhor o que meu setor já faz?”
-              </strong>{' '}
-              e passa a incluir:
-              <strong className="font-medium text-emerald-300">
-                {' '}
-                “o que pode existir quando conectamos conhecimentos que
-                normalmente permanecem separados?”
+                {' '}novas combinações e novas possibilidades.
               </strong>
+            </p>
+
+            <p>
+              A interdisciplinaridade, portanto, não é o produto final. É uma
+              ferramenta para gerar insights e ampliar o espaço de criação.
             </p>
 
             <div className="grid gap-4 sm:grid-cols-2">
               {[
-                'Criar novos produtos',
-                'Criar novos serviços',
-                'Criar novos negócios',
-                'Criar novas tecnologias',
-                'Criar novos modelos empresariais',
-                'Criar novos mercados',
+                'Criar um produto',
+                'Criar um serviço',
+                'Criar uma tecnologia',
+                'Criar uma empresa',
+                'Transformar uma empresa existente',
+                'Modelar um novo mercado',
               ].map((item) => (
                 <div
                   key={item}
@@ -495,6 +525,7 @@ export default function NexialBusinessPage() {
         </div>
       </section>
 
+      {/* NOT ONLY BETTER */}
       <section className="px-5 py-24 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="overflow-hidden rounded-[28px] border border-emerald-400/15 bg-gradient-to-br from-emerald-400/[0.08] via-white/[0.025] to-transparent p-7 sm:p-10 lg:p-14">
@@ -502,51 +533,59 @@ export default function NexialBusinessPage() {
               <div>
                 <SectionLabel>Além da inovação incremental</SectionLabel>
 
-                <h2 className="max-w-3xl text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">
-                  Da inovação dentro do mercado à{' '}
-                  <span className="text-emerald-300">
-                    criação de novos mercados.
+                <h2 className="max-w-4xl text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">
+                  Às vezes, a oportunidade não é criar um produto melhor.
+                  <span className="mt-2 block text-emerald-300">
+                    É criar um negócio diferente.
                   </span>
                 </h2>
 
                 <p className="mt-7 max-w-3xl text-lg leading-8 text-slate-400">
-                  Algumas oportunidades surgem ao melhorar aquilo que já
-                  existe. Outras aparecem quando questionamos a própria
-                  concepção de um setor e combinamos tecnologias, conhecimentos
-                  e modelos provenientes de outros mercados.
+                  Empresas normalmente respondem à concorrência tentando ser
+                  mais baratas, mais rápidas, maiores ou melhores.
                 </p>
 
                 <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-400">
-                  O objetivo do NexialBusiness é desenvolver capacidade para
-                  atuar nas duas frentes — inclusive identificar oportunidades
-                  capazes de gerar{' '}
+                  O NexialBusiness acrescenta uma pergunta diferente:
                   <strong className="font-medium text-white">
-                    novas categorias de produto, novos modelos empresariais e
-                    mercados que antes não estavam claramente definidos.
+                    {' '}e se, em vez de competir melhor dentro do modelo
+                    atual, pudéssemos conceber algo diferente?
                   </strong>
+                </p>
+
+                <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-400">
+                  Isso pode significar modificar um produto. Mas também pode
+                  significar redesenhar um serviço, transformar uma empresa,
+                  criar uma nova categoria ou explorar um espaço de mercado
+                  ainda pouco definido.
                 </p>
               </div>
 
               <div className="space-y-3">
                 {[
-                  ['01', 'Melhorar o que já existe'],
-                  ['02', 'Combinar setores'],
-                  ['03', 'Criar uma nova solução'],
-                  ['04', 'Redesenhar a experiência'],
-                  ['05', 'Criar uma nova categoria'],
-                  ['06', 'Abrir um novo mercado'],
-                ].map(([n, text]) => (
+                  ['01', 'Produto atual', 'Novo produto'],
+                  ['02', 'Serviço atual', 'Nova experiência'],
+                  ['03', 'Empresa atual', 'Novo modelo de negócio'],
+                  ['04', 'Setor tradicional', 'Nova categoria'],
+                  ['05', 'Mercado saturado', 'Novo espaço competitivo'],
+                  ['06', 'Conhecimentos separados', 'Nova combinação'],
+                ].map(([n, current, future]) => (
                   <div
                     key={n}
-                    className="flex items-center gap-4 rounded-xl border border-white/[0.07] bg-black/20 px-5 py-4"
+                    className="rounded-xl border border-white/[0.07] bg-black/20 px-5 py-4"
                   >
-                    <span className="font-mono text-xs text-emerald-300">
-                      {n}
-                    </span>
+                    <div className="flex items-center gap-3">
+                      <span className="font-mono text-xs text-emerald-300">
+                        {n}
+                      </span>
+                      <span className="text-sm text-slate-500">
+                        {current}
+                      </span>
+                    </div>
 
-                    <span className="text-sm text-slate-300">
-                      {text}
-                    </span>
+                    <div className="mt-1 pl-7 text-sm font-medium text-white">
+                      → {future}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -555,26 +594,225 @@ export default function NexialBusinessPage() {
         </div>
       </section>
 
+      {/* TRANSFORMATION EXAMPLES */}
       <section
-        id="formacoes"
+        id="transformacao"
         className="border-y border-white/[0.06] bg-white/[0.012] px-5 py-24 lg:px-8"
       >
         <div className="mx-auto max-w-7xl">
           <div className="max-w-4xl">
-            <SectionLabel>Formações especializadas</SectionLabel>
+            <SectionLabel>Modelagem e transformação</SectionLabel>
 
             <h2 className="text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">
-              Uma profissão como ponto de partida.
-              <span className="mt-2 block text-slate-500">
-                Outras áreas como multiplicadores de possibilidades.
+              E se o modelo atual
+              <span className="block text-slate-500">
+                não for o modelo do futuro?
               </span>
             </h2>
 
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-400">
-              Cada formação parte de uma área profissional principal e cria
-              conexões estratégicas com outras disciplinas para ampliar o
-              espaço de criação de produtos, serviços, tecnologias, negócios e
-              novos mercados.
+              O processo pode começar em qualquer setor. O objetivo não é
+              prever o futuro, mas desenvolver capacidade para questionar o
+              presente e conceber alternativas.
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {[
+              {
+                icon: HeartPulse,
+                title: 'Um novo hospital',
+                text: 'Como saúde, diagnóstico, acompanhamento remoto, dados, IA, logística e novos modelos econômicos poderiam produzir uma instituição diferente do hospital tradicional?',
+              },
+              {
+                icon: Building2,
+                title: 'Um novo varejo',
+                text: 'Como tecnologia, experiência, serviços, recorrência, dados e novas formas de distribuição poderiam transformar uma empresa que compete apenas por preço e localização?',
+              },
+              {
+                icon: Building2,
+                title: 'Um novo supermercado',
+                text: 'E se o supermercado deixasse de ser apenas um local de compra e passasse a integrar novos serviços, tecnologia, saúde, logística, personalização e outras fontes de receita?',
+              },
+              {
+                icon: HeartPulse,
+                title: 'Um novo sistema de farmácias',
+                text: 'Como farmácia, prevenção, diagnóstico, acompanhamento, logística, dados e serviços poderiam formar um novo ecossistema de saúde e consumo?',
+              },
+              {
+                icon: Cpu,
+                title: 'Um novo mercado de software',
+                text: 'Como IA, automação, conhecimento especializado e novos modelos de monetização podem transformar um software comum em uma nova categoria de solução?',
+              },
+              {
+                icon: Leaf,
+                title: 'Um novo agro',
+                text: 'Como agronomia, biotecnologia, engenharia, robótica, dados e economia podem gerar novos produtos, serviços, cadeias de valor e mercados?',
+              },
+              {
+                icon: Factory,
+                title: 'Novos dispositivos',
+                text: 'Como problemas da medicina, indústria, agricultura ou meio ambiente podem originar novos dispositivos, equipamentos, sensores e sistemas de engenharia?',
+              },
+              {
+                icon: BrainCircuit,
+                title: 'Novos modelos econômicos',
+                text: 'Como incentivos, precificação, plataformas, propriedade, recorrência e novas formas de captura de valor podem transformar a lógica econômica de um negócio?',
+              },
+              {
+                icon: TrendingUp,
+                title: 'Uma empresa em transformação',
+                text: 'Quando produtos e serviços enfrentam concorrência intensa, quais ativos, competências e conhecimentos da empresa poderiam originar novas ofertas ou até outro modelo empresarial?',
+              },
+            ].map(({ icon: Icon, title, text }) => (
+              <article
+                key={title}
+                className="rounded-2xl border border-white/[0.07] bg-white/[0.02] p-6"
+              >
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-emerald-400/20 bg-emerald-400/[0.06]">
+                  <Icon className="h-5 w-5 text-emerald-300" />
+                </div>
+
+                <h3 className="mt-5 text-xl font-semibold">{title}</h3>
+
+                <p className="mt-3 text-sm leading-6 text-slate-400">
+                  {text}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT YOU CAN BRING */}
+      <section className="px-5 py-24 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-14 lg:grid-cols-2">
+            <div>
+              <SectionLabel>Seu ponto de partida</SectionLabel>
+
+              <h2 className="text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">
+                Você não precisa chegar
+                <span className="block text-emerald-300">
+                  com a ideia pronta.
+                </span>
+              </h2>
+
+              <p className="mt-6 text-lg leading-8 text-slate-400">
+                Parte do valor do programa está justamente no processo de
+                descobrir oportunidades, produzir conexões e transformar
+                observações em hipóteses de criação.
+              </p>
+            </div>
+
+            <div className="grid gap-3">
+              {[
+                ['Uma ideia', 'Algo que você já gostaria de desenvolver.'],
+                ['Um problema', 'Uma dificuldade profissional, empresarial ou social que merece outra solução.'],
+                ['Uma empresa', 'Um negócio que precisa encontrar novas fontes de valor e diferenciação.'],
+                ['Uma tecnologia', 'Uma capacidade técnica procurando aplicações e mercados.'],
+                ['Uma profissão', 'Conhecimento acumulado que pode ser recombinado com outras áreas.'],
+                ['Nada definido ainda', 'Você pode começar explorando problemas, tendências e conexões até encontrar uma direção promissora.'],
+              ].map(([title, text]) => (
+                <div
+                  key={title}
+                  className="rounded-xl border border-white/[0.07] bg-white/[0.02] p-5"
+                >
+                  <div className="flex gap-4">
+                    <Search className="mt-1 h-5 w-5 shrink-0 text-emerald-300" />
+                    <div>
+                      <h3 className="font-medium text-white">{title}</h3>
+                      <p className="mt-1 text-sm leading-6 text-slate-400">
+                        {text}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT YOU DEVELOP */}
+      <section className="border-y border-white/[0.06] bg-white/[0.012] px-5 py-24 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-4xl">
+            <SectionLabel>Criação aplicada</SectionLabel>
+
+            <h2 className="text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">
+              Você não entra apenas para aprender.
+              <span className="block text-slate-500">
+                Entra para pensar, conectar e criar.
+              </span>
+            </h2>
+
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-400">
+              Dependendo do programa, da oportunidade identificada e da
+              evolução do trabalho, o processo pode ajudar o participante a
+              estruturar diferentes componentes de um projeto.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              'Mapa de problemas e oportunidades',
+              'Conexões interdisciplinares',
+              'Hipóteses de novos produtos',
+              'Conceitos de novos serviços',
+              'Possibilidades tecnológicas',
+              'Conceitos de modelos de negócio',
+              'Novas formas de monetização',
+              'Hipóteses de diferenciação',
+              'Arquitetura inicial da solução',
+              'Possíveis públicos e mercados',
+              'Caminhos de validação',
+              'Projeto conceitual de uma nova oportunidade',
+            ].map((item) => (
+              <div
+                key={item}
+                className="flex items-center gap-3 rounded-xl border border-white/[0.07] bg-white/[0.02] p-4 text-sm text-slate-300"
+              >
+                <Check className="h-4 w-4 shrink-0 text-emerald-300" />
+                {item}
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 rounded-2xl border border-emerald-400/15 bg-emerald-400/[0.04] p-6 sm:p-8">
+            <p className="text-lg leading-8 text-slate-300">
+              <strong className="text-white">
+                Um participante pode começar querendo criar um produto e
+                descobrir uma empresa.
+              </strong>{' '}
+              Pode começar analisando uma empresa e encontrar uma nova linha de
+              negócio. Pode começar estudando um problema e perceber a
+              possibilidade de uma tecnologia ou de um novo mercado.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* COURSES */}
+      <section
+        id="formacoes"
+        className="px-5 py-24 lg:px-8"
+      >
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-4xl">
+            <SectionLabel>Programas especializados</SectionLabel>
+
+            <h2 className="text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">
+              Sua área é o ponto de partida.
+              <span className="mt-2 block text-slate-500">
+                Não precisa ser o limite.
+              </span>
+            </h2>
+
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-400">
+              Cada programa parte de uma área principal e a conecta a outras
+              disciplinas para ampliar as possibilidades de criação de
+              produtos, serviços, tecnologias, negócios e mercados.
             </p>
           </div>
 
@@ -649,7 +887,7 @@ export default function NexialBusinessPage() {
                       </div>
 
                       <WhatsAppButton className="!px-4 !py-2.5 text-sm">
-                        Quero saber mais
+                        Conversar sobre este programa
                       </WhatsAppButton>
                     </div>
                   </div>
@@ -700,10 +938,51 @@ export default function NexialBusinessPage() {
         </div>
       </section>
 
-      <section
-        id="executive"
-        className="px-5 py-24 lg:px-8"
-      >
+      {/* COLLABORATION */}
+      <section className="border-y border-white/[0.06] bg-white/[0.012] px-5 py-24 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr]">
+            <div>
+              <SectionLabel>Conexões entre pessoas</SectionLabel>
+
+              <h2 className="text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">
+                Uma ideia pode encontrar outra ideia.
+                <span className="mt-2 block text-emerald-300">
+                  Uma competência pode encontrar outra competência.
+                </span>
+              </h2>
+            </div>
+
+            <div className="space-y-6 text-lg leading-8 text-slate-400">
+              <p>
+                A interdisciplinaridade também pode acontecer entre
+                participantes. Um médico pode identificar um problema que
+                exige engenharia. Um engenheiro pode desenvolver uma tecnologia
+                que precisa encontrar uma aplicação. Um profissional de
+                software pode transformar um processo tradicional em uma
+                plataforma.
+              </p>
+
+              <p>
+                Projetos podem encontrar competências complementares e,
+                havendo interesse mútuo, participantes podem decidir colaborar,
+                formar equipes ou estruturar sociedades.
+              </p>
+
+              <div className="rounded-xl border border-white/[0.07] bg-white/[0.025] p-5 text-sm leading-6 text-slate-500">
+                Eventuais sociedades, investimentos, participações ou relações
+                empresariais entre participantes dependem de decisão,
+                negociação e instrumentos próprios entre as partes. A
+                participação no programa não implica sociedade, investimento
+                ou garantia de formação de empresa.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* EXECUTIVE */}
+      <section id="executive" className="px-5 py-24 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="relative overflow-hidden rounded-[30px] border border-violet-400/20 bg-gradient-to-br from-violet-500/[0.10] via-white/[0.025] to-transparent p-7 sm:p-10 lg:p-14">
             <div className="absolute right-[-80px] top-[-100px] h-80 w-80 rounded-full bg-violet-500/[0.08] blur-[100px]" />
@@ -712,7 +991,7 @@ export default function NexialBusinessPage() {
               <div>
                 <div className="inline-flex items-center gap-2 rounded-full border border-violet-400/20 bg-violet-400/[0.07] px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-violet-300">
                   <BriefcaseBusiness className="h-3.5 w-3.5" />
-                  Formação multidisciplinar premium
+                  Programa multidisciplinar premium
                 </div>
 
                 <h2 className="mt-6 text-4xl font-semibold tracking-[-0.04em] sm:text-6xl">
@@ -724,27 +1003,24 @@ export default function NexialBusinessPage() {
 
                 <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-400">
                   Para empresários, executivos, profissionais experientes e
-                  criadores que não querem permanecer limitados a uma única
-                  vertical profissional.
+                  criadores que querem explorar oportunidades sem permanecer
+                  limitados a uma única vertical profissional.
                 </p>
 
                 <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-400">
-                  No Executive, o participante trabalha com uma{' '}
+                  Em vez de partir obrigatoriamente de uma profissão, o
+                  Executive pode partir de
                   <strong className="font-medium text-white">
-                    amplitude interdisciplinar muito maior
+                    {' '}um problema, uma empresa, uma oportunidade, uma
+                    tecnologia ou um mercado.
                   </strong>
-                  . Medicina, engenharia, inteligência artificial, economia,
-                  gestão, direito, biotecnologia, agronomia, sociologia e
-                  outras áreas passam a formar um espaço conjunto de criação.
                 </p>
 
                 <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-400">
-                  O objetivo é ampliar radicalmente o número de combinações
-                  possíveis para criação de{' '}
-                  <strong className="font-medium text-violet-200">
-                    novos produtos, novos serviços, novos negócios, novas
-                    tecnologias, novos modelos empresariais e novos mercados.
-                  </strong>
+                  Medicina, engenharia, inteligência artificial, economia,
+                  gestão, direito, biotecnologia, agronomia, sociologia e outras
+                  áreas passam a funcionar como um repertório conjunto para
+                  conceber novas soluções.
                 </p>
 
                 <div className="mt-9 flex flex-wrap items-end gap-x-8 gap-y-4">
@@ -763,14 +1039,14 @@ export default function NexialBusinessPage() {
                   </div>
 
                   <WhatsAppButton>
-                    Quero conhecer o Executive
+                    Conversar sobre o Executive
                   </WhatsAppButton>
                 </div>
               </div>
 
               <div>
                 <div className="mb-5 text-sm font-semibold text-white">
-                  Por que o Executive está acima das formações especializadas?
+                  Por que o Executive possui maior valor?
                 </div>
 
                 <div className="space-y-3">
@@ -778,27 +1054,27 @@ export default function NexialBusinessPage() {
                     {
                       icon: Network,
                       title: 'Mais áreas simultaneamente',
-                      text: 'O participante não fica restrito às conexões de uma única profissão.',
+                      text: 'O processo não fica restrito às conexões de uma única profissão.',
                     },
                     {
                       icon: Lightbulb,
-                      title: 'Mais combinações possíveis',
-                      text: 'Quanto maior a diversidade de conhecimentos conectados, maior o espaço para geração de conceitos originais.',
+                      title: 'Maior espaço de criação',
+                      text: 'Mais repertórios podem ser combinados para produzir hipóteses e conceitos diferentes.',
                     },
                     {
                       icon: Rocket,
-                      title: 'Criação multi-setorial',
-                      text: 'Permite explorar produtos, serviços, tecnologias e modelos empresariais em diferentes indústrias.',
+                      title: 'Criação multissetorial',
+                      text: 'Produtos, serviços, tecnologias e negócios podem ser explorados em diferentes indústrias.',
                     },
                     {
                       icon: Target,
-                      title: 'Foco em novas oportunidades',
-                      text: 'A análise ultrapassa a profissão de origem e busca espaços econômicos ainda pouco explorados.',
+                      title: 'Problema antes da disciplina',
+                      text: 'A pergunta é o que precisa ser criado — e depois quais conhecimentos podem ajudar.',
                     },
                     {
                       icon: Workflow,
-                      title: 'Recombinação de modelos',
-                      text: 'Modelos de um setor podem ser reinterpretados e aplicados a mercados completamente diferentes.',
+                      title: 'Modelagem de novos mercados',
+                      text: 'O participante pode explorar mudanças mais amplas em modelos empresariais, categorias e mercados.',
                     },
                   ].map(({ icon: ItemIcon, title, text }) => (
                     <div
@@ -809,10 +1085,7 @@ export default function NexialBusinessPage() {
                         <ItemIcon className="mt-0.5 h-5 w-5 shrink-0 text-violet-300" />
 
                         <div>
-                          <h3 className="font-medium">
-                            {title}
-                          </h3>
-
+                          <h3 className="font-medium">{title}</h3>
                           <p className="mt-1 text-sm leading-6 text-slate-400">
                             {text}
                           </p>
@@ -827,6 +1100,7 @@ export default function NexialBusinessPage() {
         </div>
       </section>
 
+      {/* CORPORATE */}
       <section
         id="corporate"
         className="border-y border-white/[0.06] bg-white/[0.012] px-5 py-24 lg:px-8"
@@ -836,7 +1110,7 @@ export default function NexialBusinessPage() {
             <div>
               <div className="inline-flex items-center gap-2 rounded-full border border-amber-300/20 bg-amber-300/[0.06] px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-amber-200">
                 <Building2 className="h-3.5 w-3.5" />
-                Transformação empresarial
+                Criação e transformação empresarial
               </div>
 
               <h2 className="mt-6 text-4xl font-semibold tracking-[-0.04em] sm:text-6xl">
@@ -847,21 +1121,22 @@ export default function NexialBusinessPage() {
               </h2>
 
               <p className="mt-7 text-lg leading-8 text-slate-400">
-                A versão Corporate utiliza a interdisciplinaridade para
-                investigar como os ativos, competências e estruturas de uma
-                empresa podem originar{' '}
+                Para organizações que precisam ir além da melhoria incremental
+                e explorar
                 <strong className="font-medium text-white">
-                  novas fontes de receita, novos produtos, novos serviços,
-                  tecnologias, unidades de negócio e mercados.
+                  {' '}novos produtos, serviços, tecnologias, fontes de receita,
+                  unidades de negócio e mercados.
                 </strong>
               </p>
 
               <p className="mt-5 text-lg leading-8 text-slate-400">
-                Diferentemente das formações especializadas, o Corporate
-                trabalha com múltiplas áreas ao mesmo tempo e pode partir de
-                problemas concretos da organização para reconceber produtos,
-                serviços, operações, tecnologias e até a própria lógica do
-                setor em que a empresa atua.
+                Uma empresa que enfrenta concorrência intensa já possui ativos:
+                conhecimento, clientes, dados, infraestrutura, marca, equipe e
+                experiência. A pergunta é:
+              </p>
+
+              <p className="mt-5 text-2xl font-medium leading-9 text-amber-100">
+                O que essa empresa poderia se tornar que ainda não é?
               </p>
 
               <div className="mt-8 rounded-2xl border border-amber-300/15 bg-amber-300/[0.035] p-6">
@@ -874,14 +1149,14 @@ export default function NexialBusinessPage() {
                 </div>
 
                 <p className="mt-3 text-sm leading-6 text-slate-400">
-                  Estrutura, escopo, número de participantes, profundidade e
-                  nível de customização definidos conforme o projeto.
+                  Escopo, número de participantes, profundidade, duração e nível
+                  de customização definidos conforme o projeto.
                 </p>
               </div>
 
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                 <WhatsAppButton>
-                  Solicitar conversa Corporate
+                  Conversar sobre minha empresa
                 </WhatsAppButton>
 
                 <a
@@ -899,19 +1174,19 @@ export default function NexialBusinessPage() {
             <div>
               <div className="rounded-2xl border border-white/[0.07] bg-white/[0.025] p-7">
                 <div className="text-sm font-semibold">
-                  A empresa entra com:
+                  A organização pode partir de:
                 </div>
 
                 <div className="mt-5 grid gap-3 sm:grid-cols-2">
                   {[
+                    'Produtos sob forte concorrência',
+                    'Serviços comoditizados',
                     'Conhecimento acumulado',
-                    'Equipe e competências',
                     'Tecnologias disponíveis',
-                    'Base de clientes',
-                    'Dados',
+                    'Dados e base de clientes',
                     'Infraestrutura',
-                    'Marca',
-                    'Problemas e oportunidades',
+                    'Competências da equipe',
+                    'Problemas ainda não resolvidos',
                   ].map((item) => (
                     <div
                       key={item}
@@ -930,7 +1205,7 @@ export default function NexialBusinessPage() {
                 </div>
 
                 <div className="text-sm font-semibold">
-                  O método busca transformar isso em:
+                  E explorar possibilidades de:
                 </div>
 
                 <div className="mt-5 grid gap-3 sm:grid-cols-2">
@@ -940,9 +1215,9 @@ export default function NexialBusinessPage() {
                     'Novas tecnologias',
                     'Novos negócios',
                     'Novos modelos de receita',
+                    'Novas unidades de negócio',
+                    'Novas categorias',
                     'Novos mercados',
-                    'Novas combinações estratégicas',
-                    'Novas categorias de solução',
                   ].map((item) => (
                     <div
                       key={item}
@@ -956,16 +1231,16 @@ export default function NexialBusinessPage() {
               </div>
 
               <p className="mt-5 text-sm leading-6 text-slate-500">
-                O Corporate possui maior valor porque sua amplitude e
-                profundidade podem equivaler à combinação de múltiplas
-                verticais NexialBusiness, aplicadas diretamente ao contexto
-                estratégico de uma organização.
+                O Corporate possui maior valor porque combina múltiplas
+                verticais e aplica o processo diretamente aos problemas,
+                competências, ativos e oportunidades de uma organização.
               </p>
             </div>
           </div>
         </div>
       </section>
 
+      {/* VALUE ARCHITECTURE */}
       <section className="px-5 py-24 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <SectionLabel>Arquitetura de valor</SectionLabel>
@@ -973,7 +1248,7 @@ export default function NexialBusinessPage() {
           <h2 className="max-w-4xl text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">
             Quanto maior a amplitude interdisciplinar,
             <span className="block text-slate-500">
-              maior o espaço de criação.
+              maior o espaço possível de criação.
             </span>
           </h2>
 
@@ -981,22 +1256,22 @@ export default function NexialBusinessPage() {
             <div className="grid border-b border-white/[0.07] bg-white/[0.025] md:grid-cols-3">
               {[
                 {
-                  title: 'Especializadas',
+                  title: 'Especializados',
                   price: 'R$ 7.900–14.900',
                   icon: GraduationCap,
-                  text: 'Uma profissão principal conectada a outras disciplinas.',
+                  text: 'Uma área principal como ponto de partida, conectada a outras disciplinas.',
                 },
                 {
                   title: 'Executive',
                   price: 'R$ 24.900',
                   icon: BriefcaseBusiness,
-                  text: 'Múltiplas verticais simultaneamente para criação multi-setorial.',
+                  text: 'Múltiplas áreas simultaneamente para criação e modelagem multissetorial.',
                 },
                 {
                   title: 'Corporate',
                   price: 'R$ 49.900–149.000+',
                   icon: Building2,
-                  text: 'Interdisciplinaridade aplicada ao contexto e aos ativos de uma organização.',
+                  text: 'Processo aplicado diretamente aos ativos, problemas e oportunidades de uma organização.',
                 },
               ].map(({ title, price, icon: Icon, text }) => (
                 <div
@@ -1004,15 +1279,10 @@ export default function NexialBusinessPage() {
                   className="border-white/[0.07] p-7 md:border-r last:border-r-0"
                 >
                   <Icon className="h-6 w-6 text-emerald-300" />
-
-                  <h3 className="mt-5 text-xl font-semibold">
-                    {title}
-                  </h3>
-
+                  <h3 className="mt-5 text-xl font-semibold">{title}</h3>
                   <div className="mt-1 text-sm font-medium text-emerald-300">
                     {price}
                   </div>
-
                   <p className="mt-4 text-sm leading-6 text-slate-400">
                     {text}
                   </p>
@@ -1022,10 +1292,10 @@ export default function NexialBusinessPage() {
 
             {[
               [
-                'Área central de aplicação',
-                '1 vertical principal',
-                'Múltiplas',
-                'Múltiplas + empresa',
+                'Ponto de partida',
+                'Profissão/área',
+                'Problema/oportunidade',
+                'Empresa/mercado',
               ],
               [
                 'Amplitude interdisciplinar',
@@ -1034,16 +1304,16 @@ export default function NexialBusinessPage() {
                 'Máxima/customizada',
               ],
               [
-                'Novos produtos e serviços',
+                'Criação de produtos e serviços',
                 'Sim',
                 'Sim',
                 'Sim',
               ],
               [
-                'Novos negócios',
-                'Sim',
-                'Sim',
-                'Sim',
+                'Novos modelos de negócio',
+                'Explorados',
+                'Prioritários',
+                'Estratégicos',
               ],
               [
                 'Novas tecnologias',
@@ -1052,16 +1322,16 @@ export default function NexialBusinessPage() {
                 'Sim',
               ],
               [
-                'Criação de novos mercados',
-                'Explorada',
-                'Prioritária',
+                'Modelagem de novos mercados',
+                'Possível',
+                'Ampliada',
                 'Estratégica',
               ],
               [
-                'Aplicação organizacional',
-                'Individual',
+                'Aplicação',
+                'Individual/profissional',
                 'Executiva',
-                'Corporativa',
+                'Organizacional',
               ],
             ].map((row) => (
               <div
@@ -1086,53 +1356,94 @@ export default function NexialBusinessPage() {
         </div>
       </section>
 
+      {/* METHOD */}
       <section
         id="metodo"
         className="border-y border-white/[0.06] bg-white/[0.012] px-5 py-24 lg:px-8"
       >
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr]">
+          <div className="max-w-4xl">
+            <SectionLabel>Metodologia NexialBusiness</SectionLabel>
+
+            <h2 className="text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">
+              Do problema ao insight.
+              <span className="block text-slate-500">
+                Do insight a uma nova possibilidade.
+              </span>
+            </h2>
+
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-400">
+              O processo não depende apenas de inspiração. Ele organiza a
+              exploração criativa em etapas para ampliar o repertório,
+              questionar modelos existentes e estruturar oportunidades.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {methodology.map((item) => (
+              <div
+                key={item.number}
+                className="rounded-2xl border border-white/[0.07] bg-white/[0.02] p-6"
+              >
+                <div className="font-mono text-xs text-emerald-300">
+                  {item.number}
+                </div>
+
+                <h3 className="mt-5 text-xl font-semibold">
+                  {item.title}
+                </h3>
+
+                <p className="mt-3 text-sm leading-6 text-slate-400">
+                  {item.text}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* IMPORTANT POSITIONING */}
+      <section className="px-5 py-24 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-12 rounded-[28px] border border-white/[0.07] bg-white/[0.02] p-7 sm:p-10 lg:grid-cols-2 lg:p-14">
             <div>
-              <SectionLabel>Método</SectionLabel>
+              <SectionLabel>Ambição com responsabilidade</SectionLabel>
 
-              <h2 className="text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">
-                Transformar conexão em criação.
+              <h2 className="text-4xl font-semibold tracking-[-0.04em]">
+                Grandes ideias começam como possibilidades.
               </h2>
-
-              <p className="mt-6 max-w-xl text-lg leading-8 text-slate-400">
-                A interdisciplinaridade só gera valor quando as conexões
-                conseguem produzir novas soluções, aplicações e oportunidades
-                concretas.
-              </p>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2">
-              {methodology.map((item) => (
-                <div
-                  key={item.number}
-                  className="rounded-2xl border border-white/[0.07] bg-white/[0.02] p-6"
-                >
-                  <div className="font-mono text-xs text-emerald-300">
-                    {item.number}
-                  </div>
+            <div className="space-y-5 text-base leading-7 text-slate-400">
+              <p>
+                O NexialBusiness não promete sucesso empresarial, criação
+                efetiva de uma empresa, retorno financeiro, patente,
+                investimento ou criação de um novo mercado.
+              </p>
 
-                  <h3 className="mt-5 text-xl font-semibold">
-                    {item.title}
-                  </h3>
+              <p>
+                O programa trabalha na etapa anterior e fundamental:
+                <strong className="font-medium text-white">
+                  {' '}ampliar a capacidade de observar, conectar, conceber e
+                  estruturar oportunidades.
+                </strong>
+              </p>
 
-                  <p className="mt-3 text-sm leading-6 text-slate-400">
-                    {item.text}
-                  </p>
-                </div>
-              ))}
+              <p>
+                Algumas ideias podem resultar apenas em aprendizado. Outras
+                podem evoluir para projetos, produtos, serviços ou empresas.
+                E algumas podem revelar possibilidades com potencial de
+                transformação muito maior.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
+      {/* FINAL CTA */}
       <section
         id="contato"
-        className="px-5 py-28 lg:px-8"
+        className="px-5 pb-28 pt-10 lg:px-8"
       >
         <div className="mx-auto max-w-7xl">
           <div className="relative overflow-hidden rounded-[32px] border border-emerald-400/20 bg-emerald-400/[0.055] p-8 text-center sm:p-14 lg:p-20">
@@ -1141,19 +1452,25 @@ export default function NexialBusinessPage() {
             <div className="relative mx-auto max-w-4xl">
               <Network className="mx-auto h-10 w-10 text-emerald-300" />
 
-              <h2 className="mt-7 text-4xl font-semibold tracking-[-0.045em] sm:text-6xl">
-                O próximo mercado pode estar entre duas áreas que ainda não
-                aprenderam a conversar.
+              <div className="mt-6 text-sm font-semibold uppercase tracking-[0.18em] text-emerald-300">
+                NexialBusiness
+              </div>
+
+              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.045em] sm:text-6xl">
+                O próximo produto, negócio ou mercado pode começar com uma
+                conexão que você ainda não fez.
               </h2>
 
               <p className="mx-auto mt-7 max-w-2xl text-lg leading-8 text-slate-400">
-                Escolha uma formação especializada ou amplie o espaço de
-                possibilidades com NexialBusiness Executive e Corporate.
+                Converse conosco pelo WhatsApp. Conte sua profissão, sua ideia,
+                seu problema, sua empresa ou o mercado que gostaria de
+                transformar. A conversa ajuda a identificar qual programa
+                NexialBusiness faz mais sentido para o seu ponto de partida.
               </p>
 
               <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
                 <WhatsAppButton>
-                  Falar com a NexialBusiness
+                  Iniciar conversa pelo WhatsApp
                 </WhatsAppButton>
 
                 <a
@@ -1164,18 +1481,25 @@ export default function NexialBusinessPage() {
                   {EMAIL}
                 </a>
               </div>
+
+              <p className="mx-auto mt-6 max-w-xl text-xs leading-5 text-slate-600">
+                Atendimento comercial e informações sobre programas,
+                disponibilidade, formato e condições de participação.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
+      {/* FOOTER */}
       <footer className="border-t border-white/[0.06] px-5 py-9 lg:px-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-slate-600 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <span className="font-semibold text-slate-400">
               NexialBusiness
             </span>{' '}
-            — Interdisciplinaridade aplicada à criação.
+            — Programa de criação de novos produtos, serviços, negócios e
+            mercados.
           </div>
 
           <a
@@ -1187,6 +1511,7 @@ export default function NexialBusinessPage() {
         </div>
       </footer>
 
+      {/* FLOATING WHATSAPP */}
       <a
         href={floatingWhatsApp}
         target={floatingWhatsApp.startsWith('http') ? '_blank' : undefined}

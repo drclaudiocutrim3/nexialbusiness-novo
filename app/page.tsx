@@ -23,7 +23,6 @@ import {
   TrendingUp,
   Users,
   Workflow,
-  X,
   Zap,
 } from 'lucide-react';
 import { useMemo, useState } from 'react';
@@ -35,14 +34,14 @@ const WHATSAPP_URL =
 
 const courses = [
   {
-    name: 'NexialBusiness Medicina',
+    name: 'Medicina NexialBusiness',
     price: 'R$ 14.900',
     installment: 'até 12×',
     icon: HeartPulse,
     featured: true,
     eyebrow: 'Saúde • HealthTech • Biotecnologia',
     description:
-      'Formação interdisciplinar para profissionais que desejam transformar conhecimento em saúde em novos serviços, produtos, tecnologias, modelos assistenciais e negócios.',
+      'Formação interdisciplinar para profissionais que desejam transformar conhecimento em saúde em novos produtos, novos serviços, tecnologias, modelos assistenciais, negócios e novos mercados.',
     connections: [
       'Medicina + Engenharia',
       'Medicina + Inteligência Artificial',
@@ -56,17 +55,17 @@ const courses = [
       'HealthTechs e plataformas digitais',
       'Novos modelos de atendimento',
       'Tecnologias aplicadas à saúde',
-      'Novos mercados em saúde',
+      'Novos negócios e mercados em saúde',
     ],
   },
   {
-    name: 'NexialBusiness Engenharia',
+    name: 'Engenharia NexialBusiness',
     price: 'R$ 12.900',
     installment: 'até 12×',
     icon: Factory,
     eyebrow: 'Deep Tech • Produto • Indústria',
     description:
-      'Transforme capacidade técnica em produtos, sistemas, tecnologias, serviços e empresas capazes de competir em mercados existentes ou criar novas categorias.',
+      'Transforme capacidade técnica em novos produtos, sistemas, tecnologias, serviços, empresas e novas categorias de mercado por meio de conexões interdisciplinares.',
     connections: [
       'Engenharia + IA',
       'Engenharia + Medicina',
@@ -79,18 +78,18 @@ const courses = [
       'Sistemas tecnológicos',
       'Automação e novos processos',
       'Deep Tech',
-      'Serviços tecnológicos',
-      'Novos modelos industriais',
+      'Novos serviços tecnológicos',
+      'Novos modelos industriais e mercados',
     ],
   },
   {
-    name: 'NexialBusiness IA & Dados',
+    name: 'IA & Dados NexialBusiness',
     price: 'R$ 12.900',
     installment: 'até 12×',
     icon: Cpu,
     eyebrow: 'IA • SaaS • Automação',
     description:
-      'Use inteligência artificial, dados e automação como camadas de criação de novos produtos, serviços e modelos de negócio em múltiplos setores.',
+      'Use inteligência artificial, dados e automação como mecanismos de criação de novos produtos, serviços, tecnologias, negócios e mercados em múltiplos setores.',
     connections: [
       'IA + Saúde',
       'IA + Engenharia',
@@ -108,13 +107,13 @@ const courses = [
     ],
   },
   {
-    name: 'NexialBusiness Direito',
+    name: 'Direito NexialBusiness',
     price: 'R$ 10.900',
     installment: 'até 12×',
     icon: Scale,
     eyebrow: 'LegalTech • Serviços • Estratégia',
     description:
-      'Recombine Direito, tecnologia, gestão, economia e dados para desenvolver novos serviços jurídicos, plataformas e modelos empresariais.',
+      'Recombine Direito, tecnologia, gestão, economia e dados para criar novos produtos, serviços jurídicos, plataformas, tecnologias, negócios e modelos de mercado.',
     connections: [
       'Direito + Tecnologia',
       'Direito + IA',
@@ -128,17 +127,17 @@ const courses = [
       'Automação de processos',
       'Produtos de informação',
       'Modelos jurídicos escaláveis',
-      'Novos mercados de serviços',
+      'Novos negócios e mercados jurídicos',
     ],
   },
   {
-    name: 'NexialBusiness Gestão',
+    name: 'Gestão NexialBusiness',
     price: 'R$ 10.900',
     installment: 'até 12×',
     icon: TrendingUp,
     eyebrow: 'Estratégia • Inovação • Negócios',
     description:
-      'Formação para criação de novas receitas, ofertas, empresas, unidades de negócio e mercados por meio de combinações interdisciplinares.',
+      'Formação interdisciplinar para criação de novos produtos, serviços, receitas, empresas, tecnologias, unidades de negócio e mercados.',
     connections: [
       'Gestão + Tecnologia',
       'Gestão + Economia',
@@ -150,46 +149,46 @@ const courses = [
       'Novas unidades de negócio',
       'Novos serviços',
       'Novos produtos',
-      'Modelos de receita',
+      'Novos modelos de receita',
       'Reposicionamento de mercado',
       'Criação de novas categorias',
     ],
   },
   {
-    name: 'NexialBusiness Agronomia',
+    name: 'Agronomia NexialBusiness',
     price: 'R$ 9.900',
     installment: 'até 12×',
     icon: Leaf,
     eyebrow: 'AgTech • BioTech • Agroindústria',
     description:
-      'Conecte agronomia, biologia, engenharia, dados, automação e economia para desenvolver soluções de maior valor agregado.',
+      'Conecte agronomia, biologia, engenharia, dados, automação e economia para criar novos produtos, serviços, tecnologias, negócios e mercados para o agro.',
     connections: [
-      'Agro + Engenharia',
-      'Agro + Biotecnologia',
-      'Agro + IA',
-      'Agro + Economia',
-      'Agro + Automação',
+      'Agronomia + Engenharia',
+      'Agronomia + Biotecnologia',
+      'Agronomia + IA',
+      'Agronomia + Economia',
+      'Agronomia + Automação',
     ],
     outcomes: [
       'AgTechs',
       'Novos insumos',
       'Automação agrícola',
       'Produtos biológicos',
-      'Serviços para o agro',
-      'Novas cadeias de valor',
+      'Novos serviços para o agro',
+      'Novas cadeias de valor e mercados',
     ],
   },
   {
-    name: 'NexialBusiness Biotecnologia',
+    name: 'Biotecnologia NexialBusiness',
     price: 'R$ 9.900',
     installment: 'até 12×',
     icon: Dna,
     eyebrow: 'BioTech • P&D • Produto',
     description:
-      'Transforme ciência e pesquisa em produtos, processos, aplicações tecnológicas e oportunidades de mercado.',
+      'Transforme ciência e pesquisa em novos produtos, serviços, processos, tecnologias, negócios e aplicações comerciais por meio da interdisciplinaridade.',
     connections: [
       'Biotecnologia + Medicina',
-      'Biotecnologia + Agro',
+      'Biotecnologia + Agronomia',
       'Biotecnologia + Engenharia',
       'Biotecnologia + IA',
       'Biotecnologia + Negócios',
@@ -200,17 +199,17 @@ const courses = [
       'Tecnologias aplicadas',
       'Novos processos',
       'Propriedade intelectual',
-      'Novas aplicações comerciais',
+      'Novos negócios e mercados',
     ],
   },
   {
-    name: 'NexialBusiness Economia',
+    name: 'Economia NexialBusiness',
     price: 'R$ 8.900',
     installment: 'até 12×',
     icon: BrainCircuit,
     eyebrow: 'Mercados • Estratégia • Decisão',
     description:
-      'Utilize economia, comportamento, dados e tecnologia para detectar oportunidades, redesenhar mercados e criar novos modelos econômicos.',
+      'Conecte economia, comportamento, dados, tecnologia e gestão para criar novos produtos, serviços, negócios, modelos econômicos e novos mercados.',
     connections: [
       'Economia + Dados',
       'Economia + Tecnologia',
@@ -225,6 +224,30 @@ const courses = [
       'Novas estruturas de receita',
       'Mercados emergentes',
       'Novos modelos empresariais',
+    ],
+  },
+  {
+    name: 'Sociologia NexialBusiness',
+    price: 'R$ 7.900',
+    installment: 'até 12×',
+    icon: Users,
+    eyebrow: 'Sociedade • Inovação • Impacto',
+    description:
+      'Formação interdisciplinar para transformar conhecimento sociológico em novos produtos, serviços, tecnologias, negócios e abordagens inovadoras capazes de compreender e enfrentar problemas sociais.',
+    connections: [
+      'Sociologia + Tecnologia',
+      'Sociologia + Inteligência Artificial',
+      'Sociologia + Economia',
+      'Sociologia + Direito',
+      'Sociologia + Gestão',
+    ],
+    outcomes: [
+      'Novos produtos de impacto social',
+      'Novos serviços para problemas sociais',
+      'Tecnologias sociais',
+      'Plataformas e soluções digitais',
+      'Novas abordagens de intervenção',
+      'Novos modelos de negócio e impacto',
     ],
   },
 ];
@@ -283,7 +306,7 @@ function WhatsAppButton({
 
 export default function NexialBusinessPage() {
   const [openCourse, setOpenCourse] = useState<string | null>(
-    'NexialBusiness Medicina'
+    'Medicina NexialBusiness'
   );
 
   const whatsappText = useMemo(
@@ -303,17 +326,18 @@ export default function NexialBusinessPage() {
 
   return (
     <main className="min-h-screen bg-[#05090d] text-white selection:bg-emerald-300 selection:text-black">
-      {/* NAV */}
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-[#05090d]/85 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
           <a href="#inicio" className="group flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-emerald-400/30 bg-emerald-400/10">
               <Network className="h-5 w-5 text-emerald-300" />
             </div>
+
             <div>
               <div className="text-base font-bold tracking-tight">
                 Nexial<span className="text-emerald-300">Business</span>
               </div>
+
               <div className="text-[10px] uppercase tracking-[0.18em] text-slate-500">
                 Interdisciplinaridade aplicada
               </div>
@@ -324,15 +348,19 @@ export default function NexialBusinessPage() {
             <a href="#conceito" className="transition hover:text-white">
               Conceito
             </a>
+
             <a href="#formacoes" className="transition hover:text-white">
               Formações
             </a>
+
             <a href="#executive" className="transition hover:text-white">
               Executive
             </a>
+
             <a href="#corporate" className="transition hover:text-white">
               Corporate
             </a>
+
             <a href="#metodo" className="transition hover:text-white">
               Método
             </a>
@@ -344,7 +372,6 @@ export default function NexialBusinessPage() {
         </div>
       </header>
 
-      {/* HERO */}
       <section
         id="inicio"
         className="relative overflow-hidden px-5 pb-24 pt-36 lg:px-8 lg:pb-32 lg:pt-44"
@@ -393,10 +420,12 @@ export default function NexialBusinessPage() {
                 <Check className="h-4 w-4 text-emerald-300" />
                 Interdisciplinaridade aplicada
               </span>
+
               <span className="flex items-center gap-2">
                 <Check className="h-4 w-4 text-emerald-300" />
                 Criação orientada a oportunidades
               </span>
+
               <span className="flex items-center gap-2">
                 <Check className="h-4 w-4 text-emerald-300" />
                 Produto, tecnologia e mercado
@@ -406,7 +435,6 @@ export default function NexialBusinessPage() {
         </div>
       </section>
 
-      {/* CONCEITO */}
       <section
         id="conceito"
         className="border-y border-white/[0.06] bg-white/[0.015] px-5 py-24 lg:px-8"
@@ -414,6 +442,7 @@ export default function NexialBusinessPage() {
         <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <SectionLabel>O princípio Nexial</SectionLabel>
+
             <h2 className="text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">
               Não é estudar várias áreas.
               <span className="mt-2 block text-slate-500">
@@ -466,13 +495,13 @@ export default function NexialBusinessPage() {
         </div>
       </section>
 
-      {/* MARKET RECONCEPTION */}
       <section className="px-5 py-24 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="overflow-hidden rounded-[28px] border border-emerald-400/15 bg-gradient-to-br from-emerald-400/[0.08] via-white/[0.025] to-transparent p-7 sm:p-10 lg:p-14">
             <div className="grid gap-12 lg:grid-cols-[1fr_0.8fr] lg:items-center">
               <div>
                 <SectionLabel>Além da inovação incremental</SectionLabel>
+
                 <h2 className="max-w-3xl text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">
                   Da inovação dentro do mercado à{' '}
                   <span className="text-emerald-300">
@@ -514,7 +543,10 @@ export default function NexialBusinessPage() {
                     <span className="font-mono text-xs text-emerald-300">
                       {n}
                     </span>
-                    <span className="text-sm text-slate-300">{text}</span>
+
+                    <span className="text-sm text-slate-300">
+                      {text}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -523,7 +555,6 @@ export default function NexialBusinessPage() {
         </div>
       </section>
 
-      {/* COURSES */}
       <section
         id="formacoes"
         className="border-y border-white/[0.06] bg-white/[0.012] px-5 py-24 lg:px-8"
@@ -542,7 +573,8 @@ export default function NexialBusinessPage() {
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-400">
               Cada formação parte de uma área profissional principal e cria
               conexões estratégicas com outras disciplinas para ampliar o
-              espaço de criação.
+              espaço de criação de produtos, serviços, tecnologias, negócios e
+              novos mercados.
             </p>
           </div>
 
@@ -581,9 +613,11 @@ export default function NexialBusinessPage() {
                         <div className="mb-2 text-xs font-medium uppercase tracking-[0.16em] text-slate-500">
                           {course.eyebrow}
                         </div>
+
                         <h3 className="text-xl font-semibold">
                           {course.name}
                         </h3>
+
                         <p className="mt-2 max-w-xl text-sm leading-6 text-slate-400">
                           {course.description}
                         </p>
@@ -603,9 +637,11 @@ export default function NexialBusinessPage() {
                         <div className="text-xs uppercase tracking-[0.18em] text-slate-500">
                           Investimento
                         </div>
+
                         <div className="mt-1 text-2xl font-semibold">
                           {course.price}
                         </div>
+
                         <div className="mt-1 text-xs text-slate-500">
                           Parcelamento em {course.installment}, conforme
                           condições comerciais
@@ -624,6 +660,7 @@ export default function NexialBusinessPage() {
                         <div className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
                           Conexões possíveis
                         </div>
+
                         <div className="space-y-2.5">
                           {course.connections.map((item) => (
                             <div
@@ -641,6 +678,7 @@ export default function NexialBusinessPage() {
                         <div className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
                           Possíveis direções
                         </div>
+
                         <div className="space-y-2.5">
                           {course.outcomes.map((item) => (
                             <div
@@ -662,8 +700,10 @@ export default function NexialBusinessPage() {
         </div>
       </section>
 
-      {/* EXECUTIVE */}
-      <section id="executive" className="px-5 py-24 lg:px-8">
+      <section
+        id="executive"
+        className="px-5 py-24 lg:px-8"
+      >
         <div className="mx-auto max-w-7xl">
           <div className="relative overflow-hidden rounded-[30px] border border-violet-400/20 bg-gradient-to-br from-violet-500/[0.10] via-white/[0.025] to-transparent p-7 sm:p-10 lg:p-14">
             <div className="absolute right-[-80px] top-[-100px] h-80 w-80 rounded-full bg-violet-500/[0.08] blur-[100px]" />
@@ -677,7 +717,9 @@ export default function NexialBusinessPage() {
 
                 <h2 className="mt-6 text-4xl font-semibold tracking-[-0.04em] sm:text-6xl">
                   NexialBusiness
-                  <span className="block text-violet-300">Executive</span>
+                  <span className="block text-violet-300">
+                    Executive
+                  </span>
                 </h2>
 
                 <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-400">
@@ -691,9 +733,18 @@ export default function NexialBusinessPage() {
                   <strong className="font-medium text-white">
                     amplitude interdisciplinar muito maior
                   </strong>
-                  . Medicina, engenharia, IA, economia, gestão, direito,
-                  biotecnologia, agronomia e ciências humanas passam a formar
-                  um espaço conjunto de criação.
+                  . Medicina, engenharia, inteligência artificial, economia,
+                  gestão, direito, biotecnologia, agronomia, sociologia e
+                  outras áreas passam a formar um espaço conjunto de criação.
+                </p>
+
+                <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-400">
+                  O objetivo é ampliar radicalmente o número de combinações
+                  possíveis para criação de{' '}
+                  <strong className="font-medium text-violet-200">
+                    novos produtos, novos serviços, novos negócios, novas
+                    tecnologias, novos modelos empresariais e novos mercados.
+                  </strong>
                 </p>
 
                 <div className="mt-9 flex flex-wrap items-end gap-x-8 gap-y-4">
@@ -701,9 +752,11 @@ export default function NexialBusinessPage() {
                     <div className="text-xs uppercase tracking-[0.2em] text-slate-500">
                       Investimento
                     </div>
+
                     <div className="mt-1 text-4xl font-semibold">
                       R$ 24.900
                     </div>
+
                     <div className="mt-1 text-xs text-slate-500">
                       Condições de parcelamento disponíveis
                     </div>
@@ -754,8 +807,12 @@ export default function NexialBusinessPage() {
                     >
                       <div className="flex gap-4">
                         <ItemIcon className="mt-0.5 h-5 w-5 shrink-0 text-violet-300" />
+
                         <div>
-                          <h3 className="font-medium">{title}</h3>
+                          <h3 className="font-medium">
+                            {title}
+                          </h3>
+
                           <p className="mt-1 text-sm leading-6 text-slate-400">
                             {text}
                           </p>
@@ -770,7 +827,6 @@ export default function NexialBusinessPage() {
         </div>
       </section>
 
-      {/* CORPORATE */}
       <section
         id="corporate"
         className="border-y border-white/[0.06] bg-white/[0.012] px-5 py-24 lg:px-8"
@@ -785,7 +841,9 @@ export default function NexialBusinessPage() {
 
               <h2 className="mt-6 text-4xl font-semibold tracking-[-0.04em] sm:text-6xl">
                 NexialBusiness
-                <span className="block text-amber-200">Corporate</span>
+                <span className="block text-amber-200">
+                  Corporate
+                </span>
               </h2>
 
               <p className="mt-7 text-lg leading-8 text-slate-400">
@@ -798,13 +856,23 @@ export default function NexialBusinessPage() {
                 </strong>
               </p>
 
+              <p className="mt-5 text-lg leading-8 text-slate-400">
+                Diferentemente das formações especializadas, o Corporate
+                trabalha com múltiplas áreas ao mesmo tempo e pode partir de
+                problemas concretos da organização para reconceber produtos,
+                serviços, operações, tecnologias e até a própria lógica do
+                setor em que a empresa atua.
+              </p>
+
               <div className="mt-8 rounded-2xl border border-amber-300/15 bg-amber-300/[0.035] p-6">
                 <div className="text-xs uppercase tracking-[0.18em] text-slate-500">
                   Projetos Corporate
                 </div>
+
                 <div className="mt-2 text-3xl font-semibold">
                   R$ 49.900 a R$ 149.000+
                 </div>
+
                 <p className="mt-3 text-sm leading-6 text-slate-400">
                   Estrutura, escopo, número de participantes, profundidade e
                   nível de customização definidos conforme o projeto.
@@ -898,7 +966,6 @@ export default function NexialBusinessPage() {
         </div>
       </section>
 
-      {/* COMPARISON */}
       <section className="px-5 py-24 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <SectionLabel>Arquitetura de valor</SectionLabel>
@@ -915,7 +982,7 @@ export default function NexialBusinessPage() {
               {[
                 {
                   title: 'Especializadas',
-                  price: 'R$ 8.900–14.900',
+                  price: 'R$ 7.900–14.900',
                   icon: GraduationCap,
                   text: 'Uma profissão principal conectada a outras disciplinas.',
                 },
@@ -937,10 +1004,15 @@ export default function NexialBusinessPage() {
                   className="border-white/[0.07] p-7 md:border-r last:border-r-0"
                 >
                   <Icon className="h-6 w-6 text-emerald-300" />
-                  <h3 className="mt-5 text-xl font-semibold">{title}</h3>
+
+                  <h3 className="mt-5 text-xl font-semibold">
+                    {title}
+                  </h3>
+
                   <div className="mt-1 text-sm font-medium text-emerald-300">
                     {price}
                   </div>
+
                   <p className="mt-4 text-sm leading-6 text-slate-400">
                     {text}
                   </p>
@@ -1014,7 +1086,6 @@ export default function NexialBusinessPage() {
         </div>
       </section>
 
-      {/* METHOD */}
       <section
         id="metodo"
         className="border-y border-white/[0.06] bg-white/[0.012] px-5 py-24 lg:px-8"
@@ -1023,6 +1094,7 @@ export default function NexialBusinessPage() {
           <div className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr]">
             <div>
               <SectionLabel>Método</SectionLabel>
+
               <h2 className="text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">
                 Transformar conexão em criação.
               </h2>
@@ -1043,7 +1115,11 @@ export default function NexialBusinessPage() {
                   <div className="font-mono text-xs text-emerald-300">
                     {item.number}
                   </div>
-                  <h3 className="mt-5 text-xl font-semibold">{item.title}</h3>
+
+                  <h3 className="mt-5 text-xl font-semibold">
+                    {item.title}
+                  </h3>
+
                   <p className="mt-3 text-sm leading-6 text-slate-400">
                     {item.text}
                   </p>
@@ -1054,8 +1130,10 @@ export default function NexialBusinessPage() {
         </div>
       </section>
 
-      {/* FINAL CTA */}
-      <section id="contato" className="px-5 py-28 lg:px-8">
+      <section
+        id="contato"
+        className="px-5 py-28 lg:px-8"
+      >
         <div className="mx-auto max-w-7xl">
           <div className="relative overflow-hidden rounded-[32px] border border-emerald-400/20 bg-emerald-400/[0.055] p-8 text-center sm:p-14 lg:p-20">
             <div className="absolute left-1/2 top-[-180px] h-[400px] w-[700px] -translate-x-1/2 rounded-full bg-emerald-400/10 blur-[130px]" />
@@ -1091,7 +1169,6 @@ export default function NexialBusinessPage() {
         </div>
       </section>
 
-      {/* FOOTER */}
       <footer className="border-t border-white/[0.06] px-5 py-9 lg:px-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-slate-600 sm:flex-row sm:items-center sm:justify-between">
           <div>
@@ -1110,7 +1187,6 @@ export default function NexialBusinessPage() {
         </div>
       </footer>
 
-      {/* FLOATING WHATSAPP */}
       <a
         href={floatingWhatsApp}
         target={floatingWhatsApp.startsWith('http') ? '_blank' : undefined}
